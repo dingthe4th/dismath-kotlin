@@ -1,4 +1,4 @@
-package com.apper.dismath
+package com.apper.dismath.dataclass
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,12 +23,14 @@ data class Tile(
     val y: Int,
     val operand: String,
     val piece: Piece? = null,
-    val isSelected: Boolean = false
+    val isSelected: Boolean = false,
+    val isLegalMove: Boolean = false
 )  {
     @Composable
     fun content() {
         val tileColor = when {
-            isSelected -> Color.Red // Selected tiles will have Red color
+            isSelected -> Color(0xFFff5f00)
+            isLegalMove -> Color.DarkGray // (0xFFffeb00)
             type % 2 == 1 -> Color(0xFF779556)
             else -> Color(0xFFebecd0)
         }

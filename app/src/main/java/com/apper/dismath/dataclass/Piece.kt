@@ -1,4 +1,4 @@
-package com.apper.dismath
+package com.apper.dismath.dataclass
 
 data class Piece(
     val value: String,
